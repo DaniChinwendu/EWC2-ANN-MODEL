@@ -4,7 +4,7 @@ import pickle
 import pandas as pd
 import streamlit as st 
 #collect the model object file
-filename ='EWC_2' 
+filename ='EWC_2.pkl' 
 model = pickle.load(open(filename,'rb'))
 
 def welcome():
