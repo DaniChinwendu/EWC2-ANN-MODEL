@@ -6,6 +6,7 @@ import streamlit as st
 #collect the model and min-max object file
 filename ='EWC_2.pkl' 
 scaler='minmax_scaler_2.pkl'
+target='minmax_target(1).pkl'
 
 def load_model():
     return pickle.load(open(filename,'rb'))
@@ -15,15 +16,14 @@ def load_scaler():
 
 model = load_model()
 scaler = load_scaler()
+target=target_scaler()
 
 
 def welcome():
     return "Welcome All"
 
-def inverse_transform(y_pred, min_max_values):
-  min_value = min_max_values[0]
-  max_value = min_max_values[1]
-  return (y_pred * (max_value - min_value)) + min_value
+def inverse_transform(y_pred):
+  pred=target.inverse_transform([y_pred])
 
 def prediction_LOGEC3(X, scaler, model):
     # Scale the input
@@ -73,8 +73,8 @@ def main():
     # Call the prediction function
       result = prediction_LOGEC3(X, scaler, model)
     # Convert the prediction back to the original scale
-      min_max_values=(0,1)
-      result = inverse_transform(result,min_max_values)
+      
+      result = inverse_transform(result)
       EC3_Value=result
       
       if result is not None:
