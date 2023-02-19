@@ -27,6 +27,7 @@ def welcome():
 
 def inverse_transform(y_pred):
   pred=target.inverse_transform([y_pred])
+  return pred
 
 
 def prediction_LOGEC3(X, scaler, model):
