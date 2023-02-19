@@ -14,16 +14,18 @@ def load_model():
 def load_scaler():
     return pickle.load(open(scaler,'rb'))
 
+def inverse_transform(y_pred):
+  pred=target.inverse_transform([y_pred])
+
 model = load_model()
 scaler = load_scaler()
-target=target_scaler()
+target=inverse_transform()
 
 
 def welcome():
     return "Welcome All"
 
-def inverse_transform(y_pred):
-  pred=target.inverse_transform([y_pred])
+
 
 def prediction_LOGEC3(X, scaler, model):
     # Scale the input
