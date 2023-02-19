@@ -19,7 +19,7 @@ def target_scaler():
 
 model = load_model()
 scaler = load_scaler()
-target=inverse_transform()
+target= target_scaler()
 
 
 def welcome():
