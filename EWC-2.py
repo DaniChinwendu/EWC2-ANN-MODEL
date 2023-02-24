@@ -89,9 +89,9 @@ def main():
             elif float(result) >= (-1) and float(result) < 0:
                 result = 'Strong'
             elif float(result) >= 0 and float(result) < 1:
-                result = 'Moderate'
+                result = 'Weak'
             elif float(result) >= 1:
-                result = 'Moderate'
+                result = 'Weak'
             else:
                 result = 'Non'
         else:
