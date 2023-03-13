@@ -69,9 +69,7 @@ def main():
 
     log_KSImax=st.number_input("KSIma",min_value=1.0, max_value=500.0, value=1.0, step=1.0)
     log_KSImax=convert_to_log10(log_KSImax)
-    X= np.array([[log_DPRA_mean,log_hCLAT_MIT,log_KSImax]])
-    
-    prediction_type = st.selectbox("Select prediction type:", ["Two-class", "Three-class"])
+    X= np.array([[log_hCLAT_MIT,log_DPRA_mean,log_KSImax]])
     if st.button("Predict"):
     # Scale the input
     
@@ -83,28 +81,19 @@ def main():
       EC3_Value=result
       
       if result is not None:
-        if prediction_type == "Three-class":
-            if float(result) < (-1):
-                result = 'Strong'
-            elif float(result) >= (-1) and float(result) < 0:
-                result = 'Strong'
-            elif float(result) >= 0 and float(result) < 1:
-                result = 'Weak'
-            elif float(result) >= 1:
-                result = 'Weak'
-            else:
-                result = 'Non'
+        if float(result) < (-1):
+            result = 'Strong'
+        elif float(result) >= (-1) and float(result) < 0:
+            result = 'Strong'
+        elif float(result) >= 0 and float(result) < 1:
+            result = 'Weak'
+        elif float(result) >= 1:
+            result = 'Weak'
         else:
-            if float(result) < (-1):
-                result = 'Positive'
-            elif float(result) >= (-1) and float(result) < 0:
-                result = 'Positive'
-            elif float(result) >= 0 and float(result) < 1:
-                result = 'Positive'
-            elif float(result) >= 1:
-                result = 'Positive'
-            else:
-                result = 'Negative'
+            result = 'Non'
+        
+           
+        
         st.success(f'The EC3 value is {EC3_Value} and the chemical potency is {result}')
     
 if __name__=='__main__':
