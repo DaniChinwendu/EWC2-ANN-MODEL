@@ -54,7 +54,7 @@ def main():
           st.header('WEB APP INPUT')
           st.write('The Web app utilizes log transformed input data for DPRA and h-CLAT. to aid robust and précised prediction capabilities the model accepts the following input parameter. The model accepts this input and automatically select the right input used for making prediction.')
           st.write('DPRA – Average of DPRA Lysine AND DPRA Cystine Depletion Values')
-          st.write('h-CLAT - Maximum of CD86-EC150, CD54-EC200, and CV75')
+          st.write('h-CLAT - Minimum of CD86-EC150, CD54-EC200, and CV75')
           st.header('EXTRA INFORMATION')
           st.write('in certain condition wHere CD86_EC150 and CD54_EC200 isnt avaliable CV75 should be used wile the other inputs are parametered at 0.1') 
     st.markdown(html_temp, unsafe_allow_html=True)
