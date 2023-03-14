@@ -48,13 +48,15 @@ def main():
     """
     if st.button('INFORMATION ABOUT THIS WEB APP BEFORE USE'):
           st.write("The Edelweiss ITS skin sensitization model predicts the Murine local lymph node assay (LLNA) EC3 value of a substance. The model uses Adverse Outcome Pathway data obtained from in-chemo and invitro assays to reflect the underlying immune response that leads to skin sensitization.")
-          st.write('TRAIN DATA')
+          st.header('TRAIN DATA')
           st.write('The EWC-2 model is trained with the data obtained from the Direct peptide reactivity assay (DPRA). This is  an in-chemo assay that measure a substance ability to form hapten-protein complex. Results from DPRA reflects the molecular initiating event in AOP for skin sensitization and it is the first key event in Skin Sensitization Adverse outcome pathway.')
           st.write('The model is trained on Human cell line activation assay data(h-CLAT). h-CLAT also known as human Cell line activation assay is an in-vitro test that access the ability of a substance to induce or mobilize dendric cell in the skin')
-          st.write('WEB APP INPUT')
+          st.header('WEB APP INPUT')
           st.write('The Web app utilizes log transformed input data for DPRA and h-CLAT. to aid robust and précised prediction capabilities the model accepts the following input parameter. The model accepts this input and automatically select the right input used for making prediction.')
           st.write('DPRA – Average of DPRA Lysine AND DPRA Cystine Depletion Values')
           st.write('h-CLAT - Maximum of CD86-EC150, CD54-EC200, and CV75')
+          st.header('EXTRA INFORMATION')
+          st.write('in certain condition wHere CD86_EC150 and CD54_EC200 isnt avaliable CV75 should be used wile the other inputs are parametered at 0.1) 
     st.markdown(html_temp, unsafe_allow_html=True)
     DPRA_LysD = st.number_input("DPRA LysD", min_value=0.1, max_value=200.0, value=1.0, step=1.0,)
     DPRA_CysD = st.number_input("DPRA CysD", min_value=0.1, max_value=200.0, value=1.0, step=1.0,)
