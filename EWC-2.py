@@ -56,7 +56,7 @@ def main():
           st.write('DPRA – Average of DPRA Lysine AND DPRA Cystine Depletion Values')
           st.write('h-CLAT - Maximum of CD86-EC150, CD54-EC200, and CV75')
           st.header('EXTRA INFORMATION')
-          st.write('in certain condition wHere CD86_EC150 and CD54_EC200 isnt avaliable CV75 should be used wile the other inputs are parametered at 0.1) 
+          st.write('in certain condition wHere CD86_EC150 and CD54_EC200 isnt avaliable CV75 should be used wile the other inputs are parametered at 0.1') 
     st.markdown(html_temp, unsafe_allow_html=True)
     DPRA_LysD = st.number_input("DPRA LysD", min_value=0.1, max_value=200.0, value=1.0, step=1.0,)
     DPRA_CysD = st.number_input("DPRA CysD", min_value=0.1, max_value=200.0, value=1.0, step=1.0,)
