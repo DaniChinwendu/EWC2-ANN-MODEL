@@ -44,13 +44,13 @@ def main():
     st.title("'EDELWEISS CONNECT ITS SKIN SENSITIZATION SOLUTION'")
     st.markdown('An Artificial Neural Network Regression model Utilizing invitro and inchemo(h-CLAT,DPRA,KSIma) Descriptors for predicting skin Sensitization')
     html_temp = """
-    EWC_1 SKIN SENSITIZATION PREDICTION App 
+    EWC_2 SKIN SENSITIZATION PREDICTION App 
     """
     if st.button('INFORMATION ABOUT THIS WEB APP BEFORE USE'):
           st.write("The Edelweiss ITS skin sensitization model predicts the Murine local lymph node assay (LLNA) EC3 value of a substance. The model uses Adverse Outcome Pathway data obtained from in-chemo and invitro assays to reflect the underlying immune response that leads to skin sensitization.")
           st.header('TRAIN DATA')
           st.write('A repo for the EWC artifical Neural network model for predicting EC3 Values For Skin Sensitization The EWC-2 model is trained with the data obtained from the Direct peptide reactivity assay (DPRA),Human cell line activation assay data(h-CLAT) and ARE assay replaced with keratinosense TM assay. DPRA is an in-chemo assay that measure a substance ability to form hapten-protein complex, the human Cell line activation assay is an in-vitro test that accesses the ability of a substance to induce or mobilize dendric cells in the skin While keratinosense assay which mechanistically similar to ARE assay measures the ability of a substance to activate the NFr2 pathway in keratinocytes.These tests are part of the integrated testing strategies for skin sensitization as stipulated by OECD as the relect important key events in the skin sensitization adverse outcome pathaway.')
-          st.write('The model is trained on Human cell line activation assay data(h-CLAT). h-CLAT also known as human Cell line activation assay is an in-vitro test that access the ability of a substance to induce or mobilize dendric cell in the skin')
+          
           st.header('WEB APP INPUT')
           st.write('The Web app utilizes log transformed input data for DPRA and h-CLAT. to aid robust and précised prediction capabilities the model accepts the following input parameter. The model accepts this input and automatically select the right input used for making prediction.')
           st.write('DPRA – Average of DPRA Lysine AND DPRA Cystine Depletion Values')
