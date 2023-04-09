@@ -49,7 +49,7 @@ def main():
     if st.button('INFORMATION ABOUT THIS WEB APP BEFORE USE'):
           st.write("The Edelweiss ITS skin sensitization model predicts the Murine local lymph node assay (LLNA) EC3 value of a substance. The model uses Adverse Outcome Pathway data obtained from in-chemo and invitro assays to reflect the underlying immune response that leads to skin sensitization.")
           st.header('TRAIN DATA')
-          st.write('A repo for the EWC artifical Neural network model for predicting EC3 Values For Skin Sensitization The EWC-2 model is trained with the data obtained from the Direct peptide reactivity assay (DPRA),Human cell line activation assay data(h-CLAT) and ARE assay replaced with keratinosense TM assay. DPRA is an in-chemo assay that measure a substance ability to form hapten-protein complex, the human Cell line activation assay is an in-vitro test that accesses the ability of a substance to induce or mobilize dendric cells in the skin While keratinosense assay which mechanistically similar to ARE assay measures the ability of a substance to activate the NFr2 pathway in keratinocytes.These tests are part of the integrated testing strategies for skin sensitization as stipulated by OECD as the relect important key events in the skin sensitization adverse outcome pathaway.')
+          st.write('A webapp for the EWC artifical Neural network model for predicting EC3 Values For Skin Sensitization The EWC-2 model is trained with the data obtained from the Direct peptide reactivity assay (DPRA),Human cell line activation assay data(h-CLAT) and ARE assay replaced with keratinosense TM assay. DPRA is an in-chemo assay that measure a substance ability to form hapten-protein complex, the human Cell line activation assay is an in-vitro test that accesses the ability of a substance to induce or mobilize dendric cells in the skin While keratinosense assay which mechanistically similar to ARE assay measures the ability of a substance to activate the NFr2 pathway in keratinocytes.These tests are part of the integrated testing strategies for skin sensitization as stipulated by OECD as the relect important key events in the skin sensitization adverse outcome pathaway.')
           
           st.header('WEB APP INPUT')
           st.write('The Web app utilizes log transformed input data for DPRA and h-CLAT. to aid robust and précised prediction capabilities the model accepts the following input parameter. The model accepts this input and automatically select the right input used for making prediction.')
@@ -59,8 +59,8 @@ def main():
           st.header('LINK TO REFERENCE PAPERS')
           st.write('Original model by Hirota et al.,2015 [Orignal model](https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/jat.3105)')
           st.write('Reference model by Kleinstreuer et al.,2018 [Reference Model](https://www.tandfonline.com/loi/itxc20)')
-          st.write('OECD guildline for in-vitro assay [Guildline for in-invitro](https://www.oecd.org/env/guidance-document-on-good-in-vitro-method-practices-givimp-9789264304796-en.htm)')
-          st.write('OECD guildline for LLNA assay [Guildline for LLNA](https://www.oecd.org/env/test-no-429-skin-sensitisation-9789264071100-en.htm)')
+          st.write('OECD guildline for in-vitro assay [Guildline for in-invitro assay](https://www.oecd.org/env/guidance-document-on-good-in-vitro-method-practices-givimp-9789264304796-en.htm)')
+          st.write('OECD guildline for LLNA assay [Guildline for LLNA assay](https://www.oecd.org/env/test-no-429-skin-sensitisation-9789264071100-en.htm)')
           st.header('EXTRA INFORMATION')
           st.write('In certain condition wHere CD86_EC150,CD54_EC200 or anyother inputs isnt avaliable CV75 should be used and these other inputs set to 0.1') 
     st.markdown(html_temp, unsafe_allow_html=True)
