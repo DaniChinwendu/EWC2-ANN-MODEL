@@ -41,7 +41,7 @@ def convert_to_log10(input):
   return log
 
 def main():
-    st.title("'EDELWEISS CONNECT ITS SKIN SENSITIZATION SOLUTION'")
+    st.title("EDELWEISS CONNECT ITS SKIN SENSITIZATION SOLUTION")
     st.markdown('An Artificial Neural Network Regression model Utilizing invitro and inchemo(h-CLAT,DPRA,KSIma) Descriptors for predicting skin Sensitization')
     html_temp = """
     EWC_2 SKIN SENSITIZATION PREDICTION App 
@@ -56,6 +56,9 @@ def main():
           st.write('DPRA – Average of DPRA Lysine AND DPRA Cystine Depletion Values')
           st.write('h-CLAT - Minimum of CD86-EC150, CD54-EC200, and CV75')
           st.write('KS.Ima - ARE assay replaced with keratinosense TM assay')
+          st.header('LINK TO REFERENCE PAPERS')
+          st.write('Original model by Hirota et al.,2015 [Orignal model](https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/jat.3105)')
+          st.write('Reference model by Kleinstreuer et al.,2018 [Reference Model](https://www.tandfonline.com/loi/itxc20)')
           st.header('EXTRA INFORMATION')
           st.write('In certain condition wHere CD86_EC150,CD54_EC200 or anyother inputs isnt avaliable CV75 should be used and these other inputs set to 0.1') 
     st.markdown(html_temp, unsafe_allow_html=True)
@@ -66,7 +69,7 @@ def main():
     
     CD86_EC150= st.number_input("CD86_EC150 ", min_value=1.0, max_value=5000.0, value=1.0, step=1.0)
     CD54_EC200 = st.number_input("CD54_EC200 ", min_value=1.0, max_value=5000.0, value=1.0, step=1.0)
-    CV75 = st.number_input("CV75", min_value=1.0, max_value=5000.0, value=10.0, step=1.0,)
+    CV75 = st.number_input("CV75", min_value=1.0, max_value=5000.0, value=1.0, step=1.0,)
     log_hCLAT_MIT = min(CD86_EC150, CD54_EC200, CV75)
     log_hCLAT_MIT=convert_to_log10(log_hCLAT_MIT )
 
@@ -81,7 +84,8 @@ def main():
     # Convert the prediction back to the original scale
       
       result = inverse_transform(result)
-      EC3_Value=result
+      EC3_Value=result.item()
+      EC3_Value=round(EC3_Value,2)
       
       if result is not None:
         if float(result) < (-1):
