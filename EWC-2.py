@@ -44,7 +44,7 @@ def main():
     st.title("EDELWEISS CONNECT ITS SKIN SENSITIZATION SOLUTION")
     st.markdown('An Artificial Neural Network Regression model Utilizing invitro and inchemo(h-CLAT,DPRA,KSIma) Descriptors for predicting skin Sensitization')
     html_temp = """
-    EWC_2 SKIN SENSITIZATION PREDICTION App 
+    EWC_2 SKIN SENSITIZATION PREDICTION APP 
     """
     if st.button('INFORMATION ABOUT THIS WEB APP BEFORE USE'):
           st.write("The Edelweiss ITS skin sensitization model predicts the Murine local lymph node assay (LLNA) EC3 value of a substance. The model uses Adverse Outcome Pathway data obtained from in-chemo and invitro assays to reflect the underlying immune response that leads to skin sensitization.")
@@ -53,12 +53,14 @@ def main():
           
           st.header('WEB APP INPUT')
           st.write('The Web app utilizes log transformed input data for DPRA and h-CLAT. to aid robust and précised prediction capabilities the model accepts the following input parameter. The model accepts this input and automatically select the right input used for making prediction.')
-          st.write('DPRA – Average of DPRA Lysine AND DPRA Cystine Depletion Values')
+          st.write('DPRA – Average of DPRA LySD AND DPRA CysD Values')
           st.write('h-CLAT - Minimum of CD86-EC150, CD54-EC200, and CV75')
           st.write('KS.Ima - ARE assay replaced with keratinosense TM assay')
           st.header('LINK TO REFERENCE PAPERS')
           st.write('Original model by Hirota et al.,2015 [Orignal model](https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/jat.3105)')
           st.write('Reference model by Kleinstreuer et al.,2018 [Reference Model](https://www.tandfonline.com/loi/itxc20)')
+          st.write('OECD guildline for in-vitro assay [Guildline for in-invitro](https://www.oecd.org/env/guidance-document-on-good-in-vitro-method-practices-givimp-9789264304796-en.htm)')
+          st.write('OECD guildline for LLNA assay [Guildline for LLNA](https://www.oecd.org/env/test-no-429-skin-sensitisation-9789264071100-en.htm)')
           st.header('EXTRA INFORMATION')
           st.write('In certain condition wHere CD86_EC150,CD54_EC200 or anyother inputs isnt avaliable CV75 should be used and these other inputs set to 0.1') 
     st.markdown(html_temp, unsafe_allow_html=True)
